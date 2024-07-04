@@ -6,9 +6,9 @@
 </head>
 <body>
 
-<span th:if="${#param.exists}">Пользователь уже существует</span>
+<span th:if="${error}">Пользователь уже существует</span>
 
-<form method="POST" th:action="@{/account/registration}" th:objec="user">
+<form method="POST" th:action="@{/account/registration}" th:object="${applicationUser}">
     <input type="text" placeholder="Введите имя" th:field="*{username}">
     <input type="password" placeholder="Введите пароль" th:field="*{password}">
     <input type="submit" value="Создать аккаунт">
